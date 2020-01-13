@@ -9,7 +9,7 @@ import { CrearTagDto } from 'src/app/providers/dto/dtoCrear/CrearTagDto';
 @Injectable({
   providedIn: 'root'
 })
-export class TagsServiceService {
+export class TagsService {
 
   constructor(private http: HttpClient) { }
 
