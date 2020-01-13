@@ -73,7 +73,7 @@
 
     <div class="linea-separacion"></div>
 
-    <h1 class="titulo">Panel de Noticias</h1>
+    <h1 class="titulo">Lista de Noticias</h1>
     <table class="table table-hover table-dark">
         <thead>
             <tr>
@@ -125,7 +125,7 @@
                         <label class="input-titulo">Tags:</label>
                     </div> 
                     <div class="input-titulo">
-                        <p *ngFor="let tag of tagsNoticia">&nbsp; {{tag.id_tag}}.{{tag.etiqueta}}</p>
+                        <p *ngFor="let tag of tags">&nbsp; {{tag.id_tag}}.{{tag.etiqueta}}</p>
                     </div>
                     <p class="input-titulo">Ingrese el numero de la etiqueta: (separados por comas)</p>
                     <textarea class="input-entrada" [(ngModel)]="tagsIdNoticia" [ngModelOptions]="{standalone: true}"></textarea>
@@ -148,5 +148,46 @@
     </div>
 
     <div class="linea-separacion"></div>
+
+
+    <h1 class="titulo">Lista de Tags</h1>
+    <table class="table table-hover table-dark">
+        <thead>
+            <tr>
+                <th scope="col">#</th>
+                <th scope="col" class="col-titulo">Tag</th>
+                <th scope="col" class="col-opc">Opciones</th>
+            </tr>
+        </thead>
+        <tbody *ngFor="let tag of tags; let i = index">
+            <tr>
+                <th scope="row">{{i+1}}</th>
+                <td class="col-titulo">{{tag.etiqueta}}</td>
+                <td class="col-opc"><button class="btn btn-warning mr-2">Editar</button><button class="btn btn-danger" (click)="borrarTag(tag.id_tag)">Borrar</button></td>
+            </tr>
+        </tbody>
+    </table>
+
+    <div class="linea-separacion"></div>
+
+    <div class="row">
+        <div class="col">
+            <h2 class="titulo">Crear Tag</h2>
+            <form class="centrado" [formGroup] = "formAddTag">
+
+                <div class="contenedor-input">
+                    <div class="contenedor-input-titulo">
+                        <label class="input-titulo">Etiqueta</label>
+                    </div>
+                    <div class="contenedor-input-entrada">
+                        <input class="input-entrada" type="text" [(ngModel)]="etiqueta" [ngModelOptions]="{standalone: true}">
+                        <p class="ml-2">*</p>
+                    </div>
+                </div>
+
+                <button class="btn btn-success mb-4 mt-3" (click)="agregarTag()">Guardar</button>
+            </form>
+        </div>
+    </div>
 
 </div>

@@ -13,6 +13,7 @@ import { CrearNoticiaDto } from '../providers/dto/dtoCrear/CrearNoticiaDto';
 import { NoticiasService } from '../services/noticias/noticias.service';
 import { NoticiaItem } from '../providers/entities/NoticiaItem.entity';
 import { NoticiasDto } from '../providers/dto/NoticiasDto';
+import { CrearTagDto } from '../providers/dto/dtoCrear/CrearTagDto';
 
 @Component({
   selector: 'app-home',
@@ -30,11 +31,14 @@ export class HomeComponent implements OnInit {
   Rclave: String;
   formAddUsuario: FormGroup;
   formAddNoticia: FormGroup;
+  formAddTag: FormGroup;
 
   titulo: String;
   cuerpo: String;
 
-  tagsNoticia: TagItem[];
+  etiqueta: String;
+
+  tags: TagItem[];
   tagsIdNoticia: String;
 
   noticias: NoticiaItem[];
@@ -70,11 +74,16 @@ export class HomeComponent implements OnInit {
       titulo: new FormControl(Validators.required),
       cuerpo: new FormControl(Validators.required),
     });
+    this.formAddTag = new FormGroup({
+      etiqueta: new FormControl(Validators.required),
+    });
     this.user = this.usuariosSrv.getUserLoggedIn();
     this.getUsuarios();
     this.getTags();
     this.getNoticias();
   }
+
+    //----------- USUARIOS ------------
 
   getUsuarios() {
     this.usuariosSrv.getUsuarios(new UsuariosDto()).subscribe(
@@ -117,16 +126,7 @@ export class HomeComponent implements OnInit {
     }
   }
 
-  //----------- Noticias ------------
-
-  getTags() {
-    this.tagsSrv.getAllTags(new TagsDto()).subscribe(
-      response => {
-        this.tagsNoticia = response;
-        this.tagsNoticia.reverse();
-      }
-    );
-  }
+  //----------- NOTICIAS ------------
 
   openImage() {
     this.imagInput.nativeElement.click();
@@ -200,6 +200,45 @@ export class HomeComponent implements OnInit {
         this.noticias.splice(index,1);
       }
     }
+  }
+
+  //----------- TAGS ------------
+
+  getTags() {
+    this.tagsSrv.getAllTags(new TagsDto()).subscribe(
+      response => {
+        this.tags = response;
+        this.tags.reverse();
+      }
+    );
+  }
+
+  borrarTag(id:number){
+    this.tagsSrv.deleteTag(id).subscribe();
+    for (let index = 0; index < this.tags.length; index++) {
+      if (this.tags[index].id_tag === id) {
+        this.tags.splice(index,1);
+      }
+    }
+  }
+
+  agregarTag(){
+      if (this.formAddTag.valid) {
+        const tag = new CrearTagDto();
+        tag.etiqueta = this.etiqueta;
+        this.tagsSrv.addTag(tag).subscribe(
+          response => {
+            //this.router.navigateByUrl(`/`);
+            location.reload();
+          }, err => {
+            if(err.status === 400){
+              this.htmlToAdd = '<p>Datos Incorrectos</p>';
+            }
+          }
+        )
+      } else {
+        console.log('Formulario invalido');
+      }
   }
 
 }
