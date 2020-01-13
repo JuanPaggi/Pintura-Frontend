@@ -105,7 +105,7 @@
                         <label class="input-titulo">Titulo</label>
                     </div>
                     <div class="contenedor-input-entrada">
-                        <input class="input-entrada" type="text" [(ngModel)]="titulo" [ngModelOptions]="{standalone: true}">
+                        <input class="input-entrada" type="text" [(ngModel)]="tituloNoticia" [ngModelOptions]="{standalone: true}">
                         <p class="ml-2">*</p>
                     </div>
                 </div>
@@ -139,7 +139,7 @@
                         <img class="m-2" *ngFor="let imagen of imagenesUrlNoticia; let i = index" [src]="imagen" (click)="deleteImage(i)" style="width: 50px; height: 50px;cursor: not-allowed;" />
                     </div>
                     <input type="file" #imageUpload accept="image/*" style="display: none"/>
-                    <button type="button" class="btn btn-primary" (click)="openImage()">Elegir imagen</button>
+                    <button type="button" class="btn btn-primary" (click)="openImageNoticia()">Elegir imagen</button>
                 </div>
 
                 <button class="btn btn-success mb-4 mt-3" (click)="agregarNoticia()">Guardar</button>
@@ -189,5 +189,60 @@
             </form>
         </div>
     </div>
+
+    <div class="linea-separacion"></div>
+
+    <h1 class="titulo">Lista de Galerias</h1>
+    <table class="table table-hover table-dark">
+        <thead>
+            <tr>
+                <th scope="col">#</th>
+                <th scope="col" class="col-titulo">Galeria</th>
+                <th scope="col" class="col-opc">Opciones</th>
+            </tr>
+        </thead>
+        <tbody *ngFor="let galeria of galerias; let i = index">
+            <tr>
+                <th scope="row">{{i+1}}</th>
+                <td class="col-titulo">{{galeria.titulo}}</td>
+                <td class="col-opc"><button class="btn btn-warning mr-2">Editar</button><button class="btn btn-danger" (click)="borrarGaleria(galeria.id_galeria)">Borrar</button></td>
+            </tr>
+        </tbody>
+    </table>
+
+    <div class="linea-separacion"></div>
+
+    <div class="row">
+        <div class="col">
+            <h2 class="titulo">Crear Galeria</h2>
+            <form class="centrado" [formGroup] = "formAddGaleria">
+
+                <div class="contenedor-input">
+                    <div class="contenedor-input-titulo">
+                        <label class="input-titulo">Titulo</label>
+                    </div>
+                    <div class="contenedor-input-entrada">
+                        <input class="input-entrada" type="text" [(ngModel)]="tituloGaleria" [ngModelOptions]="{standalone: true}">
+                        <p class="ml-2">*</p>
+                    </div>
+                </div>
+
+                <div class="contenedor-input">
+                    <div class="contenedor-input-titulo">
+                        <label class="input-titulo">Imagenes:</label>
+                    </div>
+                    <div class="tabla-imagenes">
+                        <img class="m-2" *ngFor="let imagen of imagenesUrlGaleria; let i = index" [src]="imagen" (click)="deleteImageGaleria(i)" style="width: 50px; height: 50px;cursor: not-allowed;" />
+                    </div>
+                    <input type="file" #imageUpload accept="image/*" style="display: none"/>
+                    <button type="button" class="btn btn-primary" (click)="openImageGaleria()">Elegir imagen</button>
+                </div>
+
+                <button class="btn btn-success mb-4 mt-3" (click)="agregarGaleria()">Guardar</button>
+            </form>
+        </div>
+    </div>
+
+    <div class="linea-separacion"></div>
 
 </div>

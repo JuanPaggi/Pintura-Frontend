@@ -12,7 +12,6 @@ import { CrearNoticiaDto } from 'src/app/providers/dto/dtoCrear/CrearNoticiaDto'
 })
 export class NoticiasService {
 
-
   constructor(private http: HttpClient) { }
 
   public getAllNoticias(body: NoticiasDto): Observable<NoticiaItem[]> {
