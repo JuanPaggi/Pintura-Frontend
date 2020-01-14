@@ -65,7 +65,7 @@ export class PanelGaleriasComponent implements OnInit {
     if (this.formAddGaleria.valid) {
       const galeria = new CrearGaleriaDto();
       galeria.titulo = this.tituloGaleria;
-      galeria.id_usuario = 9;
+      galeria.id_usuario = this.user.id_usuario;
       if (this.imageFileGaleria != null) {
         galeria.archivoImagen = this.imageFileGaleria;
       }else{
@@ -73,7 +73,6 @@ export class PanelGaleriasComponent implements OnInit {
       }
       this.galeriasSrv.addGaleria(galeria).subscribe(
         response => {
-          //this.router.navigateByUrl(`/`);
           location.reload();
         }, err => {
           if(err.status === 400){

@@ -7,6 +7,8 @@ import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { CrearNoticiaDto } from '../providers/dto/dtoCrear/CrearNoticiaDto';
 import { TagItem } from '../providers/entities/TagItem.entity';
 import { NoticiasDto } from '../providers/dto/NoticiasDto';
+import { TagsDto } from '../providers/dto/TagsDto';
+import { TagsService } from '../services/tags/tags-service.service';
 
 @Component({
   selector: 'app-panel-noticias',
@@ -37,6 +39,7 @@ export class PanelNoticiasComponent implements OnInit {
   constructor(
     private usuariosSrv: UsuariosService,
     private noticiasSrv: NoticiasService,
+    private tagsSrv: TagsService,
   ) {
     this.imageFileNoticia = [];
     this.imagenesUrlNoticia = [];
@@ -50,6 +53,7 @@ export class PanelNoticiasComponent implements OnInit {
       cuerpo: new FormControl(Validators.required),
     });
     this.getNoticias();
+    this.getTags();
   }
 
     //----------- NOTICIAS ------------
@@ -81,7 +85,7 @@ export class PanelNoticiasComponent implements OnInit {
         const noticia = new CrearNoticiaDto();
         noticia.cuerpo = this.cuerpo;
         noticia.titulo = this.tituloNoticia;
-        noticia.id_usuario = 9;
+        noticia.id_usuario = this.user.id_usuario;
         if (this.tagsIdNoticia != null) {
           noticia.tags = this.tagsIdNoticia.split(',').map(Number);
         }else{
@@ -126,6 +130,14 @@ export class PanelNoticiasComponent implements OnInit {
           this.noticias.splice(index,1);
         }
       }
+    }
+
+    getTags() {
+      this.tagsSrv.getAllTags(new TagsDto()).subscribe(
+        response => {
+          this.tags = response;
+        }
+      );
     }
 
 }
