@@ -9,6 +9,10 @@ import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 import { LoginComponent } from './login/login.component';
 import { PanelComponent } from './panel/panel.component';
 import { HeaderComponent } from './header/header.component';
+import { PanelUsuariosComponent } from './panel-usuarios/panel-usuarios.component';
+import { PanelTagsComponent } from './panel-tags/panel-tags.component';
+import { PanelGaleriasComponent } from './panel-galerias/panel-galerias.component';
+import { PanelNoticiasComponent } from './panel-noticias/panel-noticias.component';
 
 @NgModule({
   declarations: [
@@ -16,7 +20,11 @@ import { HeaderComponent } from './header/header.component';
     HomeComponent,
     LoginComponent,
     PanelComponent,
-    HeaderComponent
+    HeaderComponent,
+    PanelUsuariosComponent,
+    PanelTagsComponent,
+    PanelGaleriasComponent,
+    PanelNoticiasComponent
   ],
   imports: [
     BrowserModule,

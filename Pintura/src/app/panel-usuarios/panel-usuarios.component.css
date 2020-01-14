@@ -1,0 +1,76 @@
+.titulo{
+    display: flex;
+    justify-content: center;
+    font-family: 'Agency FB Bold', arial;
+    font-weight: 600;
+    font-size: 36px;
+}
+
+.col-titulo{
+    width: 50%;
+}
+
+.col-opc{
+    width: 25%;
+}
+
+.linea-separacion{
+    width: 100%;
+    margin-bottom: 30px;
+    box-shadow: 0px 1px 2px 1px dimgrey;
+}
+
+.centrado{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.contenedor-input{
+    width: 512px;
+    margin-bottom: 15px;
+}
+
+.contenedor-input-titulo{
+    font-family: 'Agency FB Bold', arial;
+    font-size: 28px;
+}
+
+.input-titulo{
+    margin-bottom: 0px;
+    display: flex;
+}
+
+.contenedor-input-entrada{
+    display: flex;
+}
+
+.input-entrada{
+    width: 100%;
+    height: 40px;
+    border-radius: 10px;
+    outline: none;
+    padding: 5px;
+    border: 1px solid #868686;
+    font-size: 18px;
+}
+
+.contenedor-terminos{
+    margin-bottom: 15px;
+    margin-top: 40px;
+    margin-right: 15px;
+    margin-left: 0px;
+}
+
+.texto-terminos{
+    margin:0px;
+    margin-top: 2px;
+}
+
+.checkbox-terminos{
+    margin: 5px;
+    width: 20px;
+    height: 20px;
+    border-radius: 5px;
+}
