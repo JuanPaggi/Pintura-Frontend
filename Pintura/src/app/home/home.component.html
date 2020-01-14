@@ -8,8 +8,10 @@
         <h3>{{noticia.titulo}}</h3>
         <p>{{noticia.cuerpo}}</p>
 
-        <div *ngFor="let tags of noticia.tags">
-            <p>{{ tags }} &nbsp; </p>
+        <div class="contenedor-tags">
+            <div *ngFor="let tag of noticia.tags">
+                <p>{{ encontrarTag(tag) }} &nbsp; </p>
+            </div>
         </div>
 
     </div>
