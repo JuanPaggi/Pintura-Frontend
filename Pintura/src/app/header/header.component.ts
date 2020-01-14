@@ -26,7 +26,6 @@ export class HeaderComponent implements OnInit {
 
   clickSalir(){
     this.usuariosSrv.setUserLoggedOut();
-    this.router.navigateByUrl(`/`);
     window.location.reload();
   }
 
