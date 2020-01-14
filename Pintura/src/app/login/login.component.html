@@ -1,0 +1,21 @@
+<div *ngIf="!user" class="container">
+    <div class="linea-separacion"></div>
+
+    <h1 class="titulo">Login</h1>
+    <div class="row">
+        <div class="col centrado">
+            <div class="separador-input">
+                <p class="texto-input-up">Usuario</p>
+                <input class="input-register" type="text" [(ngModel)]="usuario" [ngModelOptions]="{standalone: true}">
+            </div>
+            <div class="separador-input">
+                <p class="texto-input-up">Contraseña</p>
+                <input class="input-register" type="password" [(ngModel)]="clave" [ngModelOptions]="{standalone: true}">
+            </div>
+            <button class="boton-registro" (click)="ComprobarUsuario()">Entrar</button>
+            <div class="error-login error-texto" [innerHtml]="htmlToAdd"></div>
+        </div>
+    </div>
+    
+    <div class="linea-separacion"></div>
+</div>

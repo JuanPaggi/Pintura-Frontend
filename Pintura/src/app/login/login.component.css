@@ -1,0 +1,71 @@
+.centrado{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.titulo{
+    display: flex;
+    justify-content: center;
+    font-family: 'Agency FB Bold', arial;
+    font-weight: 600;
+    font-size: 36px;
+}
+
+.linea-separacion{
+    width: 100%;
+    margin-bottom: 30px;
+    box-shadow: 0px 1px 2px 1px dimgrey;
+}
+
+.separador-input{
+    margin: 30px;
+}
+
+.texto-input-up{
+    margin-bottom: 0;
+    font-size: 36px;
+    font-weight: 500;
+}
+
+.input-register{
+    width: 350px;
+    height: 40px;
+    border-radius: 14px;
+    border: none;
+    outline: none;
+    background: linear-gradient(180deg, rgba(29,29,29,1) 0%, rgba(71,71,71,1) 63%, rgba(117,117,117,1) 100%);
+    color: rgb(194, 194, 194);
+    font-size: 24px;
+    padding: 6px;
+    padding-left: 10px;
+    box-shadow: -1px 2px 2px 0px #444444;
+}
+
+.boton-registro{
+    border-radius: 10px;
+    width: 120px;
+    height: 40px;
+    background-color: #0069a7;
+    color: white;
+    border: none;
+    margin-left: 140px;
+    font-weight: 600;
+    font-size: 24px;
+    margin-top: 15px;
+    outline: none;
+    box-shadow: inset -2px -2px 7px -1px #0c5284;
+    font-family: 'Agency FB Bold', arial;
+}
+
+.error-login{
+    color: red;
+}
+
+.error-texto{
+    margin-top: 15px;
+    font-size: 24px;
+    font-family: 'Agency FB Bold', arial;
+    margin-left: 30px;
+}
