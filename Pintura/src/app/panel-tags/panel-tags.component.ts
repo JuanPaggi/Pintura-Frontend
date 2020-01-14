@@ -38,9 +38,6 @@ export class PanelTagsComponent implements OnInit {
     this.getTags();
   }
 
-
-  //----------- TAGS ------------
-
   getTags() {
     this.tagsSrv.getAllTags(new TagsDto()).subscribe(
       response => {

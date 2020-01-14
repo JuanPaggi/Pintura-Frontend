@@ -1,14 +1,17 @@
-
-.enlace-salir{
-    margin-right: 10px;
-    font-family: 'Agency FB Bold', arial;
-    font-size: 20px;
-    cursor: pointer;
-    font-weight: 500;
-    margin-top: 4px;
+.linea-separacion{
+    width: 70%;
+    margin: 20px 0px;
+    box-shadow: 0px 1px 2px 1px dimgrey;
 }
 
-.enlace-salir:hover{
-    color: #81e0ff !important;
-    text-decoration-line: underline !important;
+.contenedor-noticia{
+    width: 70%;
+    height: auto;
+    margin: 10px 0px;
+}
+
+.centrado{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
