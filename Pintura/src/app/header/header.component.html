@@ -1,0 +1,11 @@
+<header class="header">
+    <div class="seccion-izquierda">
+        <h2 class="logo" (click)="irHome()">Pintura Decorativa</h2>
+    </div>
+    <div class="seccion-derecha">
+        <a *ngIf="!user" class="enlaces" (click)="irLogin()">Ingresar</a>
+        <a *ngIf="user" class="enlaces" (click)="irPanel()">Panel</a>
+        <p *ngIf="user" class="separador">-</p>
+        <a *ngIf="user" class="enlaces" (click)="clickSalir()">Salir</a>
+    </div>
+</header>

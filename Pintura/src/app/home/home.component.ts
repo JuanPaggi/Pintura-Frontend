@@ -16,22 +16,9 @@ export class HomeComponent implements OnInit {
     private router: Router,
     private usuariosSrv: UsuariosService,
   ) {}
+  
   ngOnInit() {
     this.user = this.usuariosSrv.getUserLoggedIn();
-  }
-
-
-  clickedSalir(){
-    this.usuariosSrv.setUserLoggedOut();
-    window.location.reload();
-  }
-
-  irLogin(){
-    this.router.navigateByUrl(`/login`);
-  }
-
-  irPanel(){
-    this.router.navigateByUrl(`/panel`);
   }
 
 }
