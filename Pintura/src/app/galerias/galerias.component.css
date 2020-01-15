@@ -24,3 +24,20 @@
     margin: 0;
     font-size: x-large;
 }
+
+.volver-boton{
+    background-color: rgb(247, 234, 174);
+    border: 2px solid rgb(199, 192, 156);
+    width: 80px;
+    height: 40px;
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    box-shadow: inset -3px -3px 26px -13px rgb(138, 133, 133);
+}
+
+.volver-boton:active{
+    box-shadow: inset 3px 3px 26px -13px rgb(138, 133, 133);
+}

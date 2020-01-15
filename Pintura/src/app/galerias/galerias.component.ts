@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { GaleriasDto } from '../providers/dto/GaleriasDto';
 import { GaleriaItem } from '../providers/entities/GaleriaItem.entity';
 import { GaleriasService } from '../services/galerias/galerias.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-galerias',
@@ -13,6 +14,7 @@ export class GaleriasComponent implements OnInit {
   galerias: GaleriaItem[];
 
   constructor(
+    private router: Router,
     private galeriasSrv: GaleriasService,
   ) { }
 
@@ -26,6 +28,10 @@ export class GaleriasComponent implements OnInit {
         this.galerias = response;
       }
     );
+  }
+
+  volverHome(){
+    this.router.navigateByUrl(`/`);
   }
 
 }
