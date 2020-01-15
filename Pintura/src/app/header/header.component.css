@@ -1,9 +1,10 @@
 .header{
     width: 100%;
     height: 70px;
-    /*background: linear-gradient(135deg, rgb(67, 135, 214) 0%,rgb(36, 138, 224) 16%,rgb(38, 140, 226) 16%,rgba(32,124,202,1) 26%,rgba(41,137,216,1) 35%,rgba(41,137,216,1) 51%,rgba(41,137,216,1) 71%,rgba(93, 156, 206) 100%);
-  */  
+    /*background: linear-gradient(135deg, rgb(67, 135, 214) 0%,rgb(36, 138, 224) 16%,rgb(38, 140, 226) 16%,rgba(32,124,202,1) 26%,rgba(41,137,216,1) 35%,rgba(41,137,216,1) 51%,rgba(41,137,216,1) 71%,rgba(93, 156, 206) 100%); 
     background: linear-gradient(5deg, rgb(191, 215, 245) 0%,rgb(176, 210, 239) 50%,rgb(191, 214, 232) 100%);
+    */
+    background-color: #adddff;
     display: flex;
 }
 
