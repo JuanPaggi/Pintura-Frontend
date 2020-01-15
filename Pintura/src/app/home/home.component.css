@@ -22,4 +22,26 @@
 
 .etiquetas{
     margin: 0;
+    border: 2px solid burlywood;
+    padding: 0px 3px;
+    border-radius: 7px;
+    margin: 0px 3px;
+}
+
+.enlace-galeria{
+    cursor: pointer;
+}
+
+.enlace-galeria:hover{
+    text-decoration: underline;
+}
+
+.noticia-titulo{
+    display: flex;
+    justify-content: center;
+    margin-bottom: 15px;
+}
+
+.noticia-cuerpo{
+
 }

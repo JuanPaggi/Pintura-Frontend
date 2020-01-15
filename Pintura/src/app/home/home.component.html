@@ -1,19 +1,31 @@
 
-<div class="container centrado" *ngFor="let noticia of noticias">
+<section class="centrado">
+    <a class="enlace-galeria" (click)="irGalerias()">Ver Galeria</a>
     
+    <div class="container centrado" *ngFor="let noticia of noticias">
+    
+        <div class="linea-separacion"></div>
+    
+        <div class="contenedor-noticia">
+            
+            <div class="noticia-titulo">
+                <h3>{{noticia.titulo}}</h3>
+            </div>
+            <div class="noticia-cuerpo">
+                <p>{{noticia.cuerpo}}</p>
+            </div>
+    
+            <div class="contenedor-tags">
+                <p style="margin-top: 2px;">Etiquetas: &nbsp;</p>
+                <div *ngFor="let tag of noticia.tags">
+                    <p class="etiquetas">{{ encontrarTag(tag) }} {{mostrarEtiqueta}} </p>
+                </div>
+            </div>
+    
+        </div>
+        
+    </div>
+
     <div class="linea-separacion"></div>
 
-    <div class="contenedor-noticia">
-
-        <h3>{{noticia.titulo}}</h3>
-        <p>{{noticia.cuerpo}}</p>
-
-        <div class="contenedor-tags">
-            <div *ngFor="let tag of noticia.tags">
-                <p class="etiquetas">{{ encontrarTag(tag) }} {{mostrarEtiqueta}} &nbsp; </p>
-            </div>
-        </div>
-
-    </div>
-    
-</div>
+</section>

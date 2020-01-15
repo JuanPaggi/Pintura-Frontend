@@ -66,4 +66,8 @@ export class HomeComponent implements OnInit {
     });
   }
 
+  irGalerias(){
+    this.router.navigateByUrl(`/galerias`);
+  }
+
 }

@@ -13,6 +13,7 @@ import { PanelUsuariosComponent } from './panel-usuarios/panel-usuarios.componen
 import { PanelTagsComponent } from './panel-tags/panel-tags.component';
 import { PanelGaleriasComponent } from './panel-galerias/panel-galerias.component';
 import { PanelNoticiasComponent } from './panel-noticias/panel-noticias.component';
+import { GaleriasComponent } from './galerias/galerias.component';
 
 @NgModule({
   declarations: [
@@ -24,7 +25,8 @@ import { PanelNoticiasComponent } from './panel-noticias/panel-noticias.componen
     PanelUsuariosComponent,
     PanelTagsComponent,
     PanelGaleriasComponent,
-    PanelNoticiasComponent
+    PanelNoticiasComponent,
+    GaleriasComponent
   ],
   imports: [
     BrowserModule,
