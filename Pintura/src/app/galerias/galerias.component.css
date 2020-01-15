@@ -1,18 +1,18 @@
 .contenedor-galeria{
     width: 250px;
     height: 100px;
-    background-color: rgb(255, 228, 169);
+    background: linear-gradient(5deg, rgb(191, 215, 245) 0%,rgb(176, 210, 239) 50%,rgb(191, 214, 232) 100%);
     margin-top: 80px;
     display: flex;
     justify-content: center;
     align-items: center;
     border-radius: 25px;
     cursor: pointer;
-    box-shadow: inset -7px -7px 26px -13px rgb(138, 133, 133);
+    box-shadow: inset -3px -3px 26px -13px rgb(138, 133, 133);
 }
 
 .contenedor-galeria:active{
-    box-shadow: inset 7px 7px 26px -13px rgb(138, 133, 133);
+    box-shadow: inset 3px 3px 26px -13px rgb(138, 133, 133);
 }
 
 .columna{
@@ -26,8 +26,8 @@
 }
 
 .volver-boton{
-    background-color: rgb(247, 234, 174);
-    border: 2px solid rgb(199, 192, 156);
+    background: linear-gradient(5deg, rgb(191, 215, 245) 0%,rgb(176, 210, 239) 50%,rgb(191, 214, 232) 100%);
+    border: 2px solid rgb(207, 225, 241);
     width: 80px;
     height: 40px;
     border-radius: 10px;
