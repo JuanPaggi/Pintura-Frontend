@@ -1,9 +1,9 @@
 <section *ngIf="user" class="panel-container">
     <div class="panel-izquierdo">
-        <button (click)="activarNoticias()">Noticias</button>
-        <button (click)="activarGalerias()">Galerias</button>
-        <button (click)="activarUsuarios()">Usuarios</button>
-        <button (click)="activarTags()">Etiquetas</button>
+        <a class="boton-panel" (click)="activarNoticias()">Noticias</a>
+        <a class="boton-panel" (click)="activarGalerias()">Galerias</a>
+        <a class="boton-panel" (click)="activarUsuarios()">Usuarios</a>
+        <a class="boton-panel" (click)="activarTags()">Etiquetas</a>
     </div>
     <div class="panel-derecho">
         <div *ngIf="panelNoticia"><app-panel-noticias></app-panel-noticias></div>

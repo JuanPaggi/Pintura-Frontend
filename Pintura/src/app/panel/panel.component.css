@@ -7,14 +7,17 @@
 .panel-izquierdo{
     width: 20%;
     height: 100%;
-    background-color: rgb(79, 137, 139);
+    background-color: #ebfaff;
     display: flex;
     flex-direction: column;
+    padding: 5px 10px;
+    border: 2px solid #dce5f5;
 }
 
 .panel-derecho{
     width: 80%;
     height: 100%;
+    border-top: 2px solid #dce5f5;
 }
 
 .centrado{
@@ -181,4 +184,22 @@
     width: 20px;
     height: 20px;
     margin-left: 30px;
+}
+
+.boton-panel{
+    height: auto;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    padding: 8px 0px;
+    margin: 10px 0px;
+    font-size: 20px;
+    cursor: pointer;
+    box-shadow: inset 3px 1px 11px 4px #d5dcff;
+    border-radius: 5px;
+    border: 2px solid #abaebf;
+}
+
+.boton-panel:active{
+    box-shadow: inset 1px 1px 22px 0px #b5bad6;
 }
