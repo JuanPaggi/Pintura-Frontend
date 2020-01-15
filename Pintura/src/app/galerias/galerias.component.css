@@ -1,0 +1,26 @@
+.contenedor-galeria{
+    width: 250px;
+    height: 100px;
+    background-color: rgb(255, 228, 169);
+    margin-top: 80px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 25px;
+    cursor: pointer;
+    box-shadow: inset -7px -7px 26px -13px rgb(138, 133, 133);
+}
+
+.contenedor-galeria:active{
+    box-shadow: inset 7px 7px 26px -13px rgb(138, 133, 133);
+}
+
+.columna{
+    display: flex;
+    justify-content: center;
+}
+
+.texto-caja{
+    margin: 0;
+    font-size: x-large;
+}

@@ -1,1 +1,9 @@
-<p>galerias works!</p>
+<section class="container">
+    <div class="row">
+        <div class="col-4 columna" *ngFor="let galeria of galerias">
+            <div class="contenedor-galeria">
+                <p class="texto-caja">{{galeria.titulo}}</p>
+            </div>
+        </div>
+    </div>
+</section>

@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { GaleriasDto } from '../providers/dto/GaleriasDto';
+import { GaleriaItem } from '../providers/entities/GaleriaItem.entity';
+import { GaleriasService } from '../services/galerias/galerias.service';
 
 @Component({
   selector: 'app-galerias',
@@ -7,9 +10,22 @@ import { Component, OnInit } from '@angular/core';
 })
 export class GaleriasComponent implements OnInit {
 
-  constructor() { }
+  galerias: GaleriaItem[];
+
+  constructor(
+    private galeriasSrv: GaleriasService,
+  ) { }
 
   ngOnInit() {
+    this.getGalerias();
+  }
+
+  getGalerias() {
+    this.galeriasSrv.getAllGalerias(new GaleriasDto()).subscribe(
+      response => {
+        this.galerias = response;
+      }
+    );
   }
 
 }
