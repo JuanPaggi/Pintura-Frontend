@@ -1,26 +1,8 @@
-<h1 class="titulo">Lista de Galerias</h1>
-<table class="table table-hover table-dark">
-    <thead>
-        <tr>
-            <th scope="col">#</th>
-            <th scope="col" class="col-titulo">Galeria</th>
-            <th scope="col" class="col-opc">Opciones</th>
-        </tr>
-    </thead>
-    <tbody *ngFor="let galeria of galerias; let i = index">
-        <tr>
-            <th scope="row">{{i+1}}</th>
-            <td class="col-titulo">{{galeria.titulo}}</td>
-            <td class="col-opc"><button class="btn btn-warning mr-2">Editar</button><button class="btn btn-danger" (click)="borrarGaleria(galeria.id_galeria)">Borrar</button></td>
-        </tr>
-    </tbody>
-</table>
-
 <div class="linea-separacion"></div>
 
-<div class="row">
+<div class="row ">
     <div class="col">
-        <h2 class="titulo">Crear Galeria</h2>
+        <h2 class="titulo mt-3">Crear Galeria</h2>
         <form class="centrado" [formGroup] = "formAddGaleria">
 
             <div class="contenedor-input">
@@ -50,3 +32,21 @@
 </div>
 
 <div class="linea-separacion"></div>
+
+<h1 class="titulo">Lista de Galerias</h1>
+<table class="table table-hover table-dark">
+    <thead>
+        <tr>
+            <th scope="col">#</th>
+            <th scope="col" class="col-titulo">Galeria</th>
+            <th scope="col" class="col-opc">Opciones</th>
+        </tr>
+    </thead>
+    <tbody *ngFor="let galeria of galerias; let i = index">
+        <tr>
+            <th scope="row">{{i+1}}</th>
+            <td class="col-titulo">{{galeria.titulo}}</td>
+            <td class="col-opc"><button class="btn btn-warning mr-2">Editar</button><button class="btn btn-danger" (click)="borrarGaleria(galeria.id_galeria)">Borrar</button></td>
+        </tr>
+    </tbody>
+</table>

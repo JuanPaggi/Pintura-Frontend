@@ -1,28 +1,8 @@
-<h1 class="titulo">Lista de Noticias</h1>
-<table class="table table-hover table-dark">
-    <thead>
-        <tr>
-            <th scope="col">#</th>
-            <th scope="col" class="col-titulo">Titulo</th>
-            <th scope="col" class="col-opc">Usuario</th>
-            <th scope="col" class="col-opc">Opciones</th>
-        </tr>
-    </thead>
-    <tbody *ngFor="let noticia of noticias; let i = index">
-        <tr>
-            <th scope="row">{{i+1}}</th>
-            <td class="col-titulo">{{noticia.titulo}}</td>
-            <td class="col-opc">{{noticia.id_usuario}}</td>
-            <td class="col-opc"><button class="btn btn-warning mr-2">Editar</button><button class="btn btn-danger" (click)="borrarNoticia(noticia.id_noticia)">Borrar</button></td>
-        </tr>
-    </tbody>
-</table>
-
 <div class="linea-separacion"></div>
 
 <div class="row">
     <div class="col">
-        <h2 class="titulo">Crear noticia</h2>
+        <h2 class="titulo mt-3">Crear noticia</h2>
         <form class="centrado" [formGroup] = "formAddNoticia">
 
             <div class="contenedor-input">
@@ -73,3 +53,23 @@
 </div>
 
 <div class="linea-separacion"></div>
+
+<h1 class="titulo">Lista de Noticias</h1>
+<table class="table table-hover table-dark">
+    <thead>
+        <tr>
+            <th scope="col">#</th>
+            <th scope="col" class="col-titulo">Titulo</th>
+            <th scope="col" class="col-opc">Usuario</th>
+            <th scope="col" class="col-opc">Opciones</th>
+        </tr>
+    </thead>
+    <tbody *ngFor="let noticia of noticias; let i = index">
+        <tr>
+            <th scope="row">{{i+1}}</th>
+            <td class="col-titulo">{{noticia.titulo}}</td>
+            <td class="col-opc">{{noticia.id_usuario}}</td>
+            <td class="col-opc"><button class="btn btn-warning mr-2">Editar</button><button class="btn btn-danger" (click)="borrarNoticia(noticia.id_noticia)">Borrar</button></td>
+        </tr>
+    </tbody>
+</table>
