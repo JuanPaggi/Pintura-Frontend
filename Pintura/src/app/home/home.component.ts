@@ -18,7 +18,6 @@ export class HomeComponent implements OnInit {
 
   noticias: NoticiaItem[];
 
-  tagsId: number[];
   tags: TagItem[];
 
   user: User;
@@ -28,7 +27,9 @@ export class HomeComponent implements OnInit {
     private usuariosSrv: UsuariosService,
     private noticiasSrv: NoticiasService,
     private tagsSrv: TagsService,
-  ) {}
+  ) {
+    this.tags = [];
+  }
   
   ngOnInit() {
     this.user = this.usuariosSrv.getUserLoggedIn();
@@ -41,7 +42,6 @@ export class HomeComponent implements OnInit {
     this.noticiasSrv.getAllNoticias(new NoticiasDto()).subscribe(
       response => {
         this.noticias = response;
-        console.log(this.noticias);
       }
     );
   }
@@ -55,12 +55,13 @@ export class HomeComponent implements OnInit {
     );
   }
 
+  mostrarEtiqueta:String;
+
   encontrarTag(tag:number){
     this.tags.forEach(element => {
-      console.log(tag);
       if (tag === element.id_tag) {
-        console.log(element.etiqueta);
-        return element.etiqueta;
+        this.mostrarEtiqueta = element.etiqueta;
+        return this.mostrarEtiqueta;
       }
     });
   }

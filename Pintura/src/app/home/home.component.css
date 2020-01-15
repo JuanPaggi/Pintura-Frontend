@@ -19,3 +19,7 @@
 .contenedor-tags{
     display: flex;
 }
+
+.etiquetas{
+    margin: 0;
+}

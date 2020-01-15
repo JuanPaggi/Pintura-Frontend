@@ -10,7 +10,7 @@
 
         <div class="contenedor-tags">
             <div *ngFor="let tag of noticia.tags">
-                <p>{{ encontrarTag(tag) }} &nbsp; </p>
+                <p class="etiquetas">{{ encontrarTag(tag) }} {{mostrarEtiqueta}} &nbsp; </p>
             </div>
         </div>
 
