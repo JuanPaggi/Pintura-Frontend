@@ -10,7 +10,6 @@
     background-color: #ebfaff;
     display: flex;
     flex-direction: column;
-    padding: 5px 10px;
     border: 2px solid #dce5f5;
 }
 
@@ -196,8 +195,8 @@
     font-size: 20px;
     cursor: pointer;
     box-shadow: inset 3px 1px 11px 4px #d5dcff;
-    border-radius: 5px;
-    border: 2px solid #abaebf;
+    border-top: 2px solid #cfe1e4;
+    border-bottom: 2px solid #cfe1e4;
 }
 
 .boton-panel:active{

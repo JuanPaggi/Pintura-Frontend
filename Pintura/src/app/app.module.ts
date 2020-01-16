@@ -14,6 +14,7 @@ import { PanelTagsComponent } from './panel-tags/panel-tags.component';
 import { PanelGaleriasComponent } from './panel-galerias/panel-galerias.component';
 import { PanelNoticiasComponent } from './panel-noticias/panel-noticias.component';
 import { GaleriasComponent } from './galerias/galerias.component';
+import { FooterComponent } from './footer/footer.component';
 
 @NgModule({
   declarations: [
@@ -26,7 +27,8 @@ import { GaleriasComponent } from './galerias/galerias.component';
     PanelTagsComponent,
     PanelGaleriasComponent,
     PanelNoticiasComponent,
-    GaleriasComponent
+    GaleriasComponent,
+    FooterComponent
   ],
   imports: [
     BrowserModule,
